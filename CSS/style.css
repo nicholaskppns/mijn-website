@@ -1,3 +1,7 @@
+:root {
+  --theme-active-color: rgb(12, 71, 25);
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -25,7 +29,12 @@ main {
 .navbar .nav-link {
   color: #778858;
 }
-
+.navbar .nav-link:hover {
+  color: #99aa70; /* lighter shade on hover */
+}
+.navbar .nav-link.active {
+  color: var(--theme-active-color);
+}
 .title-color {
   color: rgba(119, 136, 88, 1);  /* 1 means 100% opacity */
 }
@@ -56,4 +65,159 @@ main {
     border-right: 2px solid rgba(119, 136, 88, 0.3) !important;
     min-height: 100vh;
     box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.1);
+}
+
+.custom-carousel .carousel-item {
+    height: 350px; /* same height for all slides — adjust as needed */
+}
+.custom-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* maintain fill and crop uniformly */
+    display: block;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  display: block;     /* fill the column width */
+  width: 100%;
+  max-width: 420px;   /* optional: limit card width in larger columns */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fixed responsive heights — adjust values to taste */
+.project-card img {
+  display: block;
+  width: 100%;
+  height: 200px;      /* desktop default height */
+  object-fit: cover;  /* fill and crop uniformly */
+}
+
+/* Smaller screens */
+@media (max-width: 767.98px) {
+  .project-card img {
+    height: 140px;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1200px) {
+  .project-card img {
+    height: 260px;
+  }
+}
+
+/* Overlay fills the exact card area */
+.project-card .overlay {
+  position: absolute;
+  inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* push content toward top */
+  gap: .35rem;
+  padding: .6rem;
+  text-align: center;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* reset any global positioning/transform for title and paragraph */
+.project-card .overlay .text,
+.project-card .overlay p {
+  position: static !important;
+  transform: none !important;
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+/* title above paragraph */
+.project-card .overlay .text {
+  order: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  padding-top: 0;
+}
+
+.project-card .overlay p {
+  order: 1;
+  margin-top: .25rem;
+  font-size: .9rem;
+  line-height: 1.2;
+}
+
+/* show overlay on hover/focus */
+.project-card:hover .overlay,
+.project-card:focus-within .overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* small niceties: reset margins inside overlay */
+.project-card .overlay .text,
+.project-card .overlay p {
+  margin: 0;
+  width: 100%;
+}
+
+/* optional: slightly pull the paragraph up under the title */
+.project-card .overlay p {
+  margin: 0;
+  margin-top: 0.15rem;
+  font-size: 0.9rem;
+}
+
+/* ensure mx-auto works for centering */
+.project-card.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

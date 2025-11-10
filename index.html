@@ -70,7 +70,7 @@
           </ul>
         </aside>
         <main class="col-12 col-md-10 order-first order-md-last">
-          <section class="container">
+          <section class="container-fluid px-3">  <!-- changed -->
             <div class="row">
               <div class="col-12 col-md-6">
                 <h1 class="text-start title-color">
@@ -82,7 +82,7 @@
                 </p>
               </div>
               <div class="col-12 col-md-6">
-                <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselAutoplaying" class="carousel slide custom-carousel pt-3" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img src="Assets/images/Sfeerbeeld1.jpeg" class="d-block w-100 img-fluid" alt="Sfeerbeeld netwerk">
@@ -94,19 +94,46 @@
                       <img src="Assets/images/Sfeerbeeld3.jpeg" class="d-block w-100 img-fluid" alt="Sfeerbeeld netwerk">
                     </div>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                
                 </div>
               </div>
             </div>
           </section>
 
+          <section class="container-fluid px-3 mt-4"> <!-- changed -->
+            <div class="row">
+              <div class="col-12 col-lg-4">
+                <h2 class="title-color text-center">Enkele projecten</h2>
+                <p class="text-center">Hieronder kan je al een paar van mijn projecten bekijken.</p>
+              </div>
+                <div class="row">
+                  <article class="project-card p-0 m-0 mx-auto col-12 col-md-4">
+                    <img src="Assets/images/Homelab.png" alt="Homelab project image" class="img-fluid">
+                    <div class="overlay">
+                      <div class="text">Homelab Project</div>
+                      <p>Tijdens mijn vrije tijd heb ik een persoonlijk homelab opgezet om mijn vaardigheden in systeem- en netwerkbeheer te verbeteren.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="project-card p-0 m-0 mx-auto col-12 col-md-4">
+                    <img src="Assets/images/HTML.png" alt="HTML project image" class="img-fluid">
+                    <div class="overlay">
+                      <div class="text">Webdesign Project</div>
+                      <p>Voor een schoolproject heb ik een portfolio website ontworpen en ontwikkeld met HTML, CSS en Bootstrap om mijn vaardigheden in webdesign te oefenen.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="project-card p-0 m-0 mx-auto col-12 col-md-4">
+                    <img src="Assets/images/python_code.jpg" alt="Python project image" class="img-fluid">
+                    <div class="overlay">
+                      <div class="text">Python Project</div>
+                      <p>Tijdens mijn opleiding ben ik bezig met python.
+                      </p>
+                    </div>
+                  </article>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </div>
